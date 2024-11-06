@@ -1,0 +1,43 @@
+body {
+    padding-bottom: 60px;
+    background-color: #151218;
+}
+
+#wrapper{
+    width: 1600px;
+}
+
+#header{
+    color: #fff;
+    font-size: 32px;
+    padding-bottom: 25px;
+}
+
+#main {
+    position: absolute;
+    width: 1300px;
+    margin-right: 100px;
+    color: #fff;
+    background-color: #26272f;
+}
+
+#margintext {
+    margin: 1px;
+}
+#extras {
+    position: absolute;
+    width: 250px;
+    margin-left:  1400px;
+    color: #fff;
+    background-color: #26272f;
+
+}
+#footer {
+    position: fixed;
+    width: 1920px;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    background-color: #161616;
+    text-align: center;
+}
