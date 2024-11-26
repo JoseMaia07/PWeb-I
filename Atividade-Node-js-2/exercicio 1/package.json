@@ -1,0 +1,16 @@
+{
+  "name": "atividade-node-js---2",
+  "version": "1.0.1",
+  "description": "Atividade 2 de node-js da disciplina de PWI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JMCN",
+  "license": "ISC",
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {}
+}
