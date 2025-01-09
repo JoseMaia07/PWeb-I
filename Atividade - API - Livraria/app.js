@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 // Middleware para analisar o corpo da requisição em formato JSON
 app.use(express.json());
