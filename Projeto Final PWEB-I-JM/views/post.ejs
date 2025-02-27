@@ -1,0 +1,16 @@
+<%- include('./partials/header') %>
+<div style="height: 100px; width: 100%;">
+    <img src="../images/componentes/Fundo-Skyrim-WH.jpg" class="rounded w-100 h-100 z-n1 position-absolute" alt="...">
+</div>
+  
+<div class="container mt-5 bg-dark text-light">
+  <h2><%= postagem.titulo %></h2>
+  <% if (postagem.capa) { %>
+    <img src="/<%= postagem.capa %>" class="img-fluid mb-3">
+  <% } %>
+  <h5>Categoria: <%= postagem.categoria %></h5>
+  <p><%= postagem.conteudo %></p>
+  <a href="/posts" class="btn btn-secondary">Voltar</a>
+</div>
+
+<%- include('./partials/footer') %>

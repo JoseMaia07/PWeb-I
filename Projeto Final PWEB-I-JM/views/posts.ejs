@@ -1,0 +1,35 @@
+<%- include('./partials/header') %>
+<div style="height: 100px; width: 100%;">
+    <img src="../images/componentes/Fundo-Skyrim-WH.jpg" class="rounded w-100 h-100 z-n1 position-absolute" alt="...">
+</div>
+  
+<div class="container-fluid mt-5 pt-5 bg-dark text-light z-n2" style="height: 100%; width: 1500px;">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>Postagens Recentes</h2>
+    <a href="/posts/criar" class="btn btn-success">Criar Nova Postagem</a>
+  </div>
+  <div class="row mt-3">
+    <% postagens.forEach(post => { %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <% if (post.capa) { %>
+            <img src="<%= post.capa %>" class="card-img-top">
+          <% } %>
+          <div class="card-body bg-dark text-light">
+            <h5 class="card-title">
+              <a href="/posts/<%= post.titulo %>" class="text-light text-decoration-none">
+                <%= post.titulo %>
+              </a>
+            </h5>
+            <h6 class="card-subtitle text-muted"><%= post.categoria %></h6>
+            <p class="card-text"><%= post.conteudo.substring(0, 100) %>...</p>
+            <a href="/posts/editar/<%= post.titulo %>" class="btn btn-warning">Editar</a>
+            <a href="/posts/deletar/<%= post.titulo %>" class="btn btn-danger">Deletar</a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
