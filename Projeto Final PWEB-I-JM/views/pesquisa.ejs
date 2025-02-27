@@ -1,0 +1,24 @@
+<%- include('./partials/header') %>
+
+<div class="container mt-5 bg-dark text-light">
+    <h2>Resultados da Pesquisa para: "<%= termo %>"</h2>
+    <% if (resultados.length > 0) { %>
+      <ul>
+        <% resultados.forEach(post => { %>
+          <li>
+            <h3><a href="/posts/<%= post.titulo %>"><%= post.titulo %></a></h3>
+            <% if (post.capa) { %>
+              <img src="/<%= post.capa %>" alt="<%= post.titulo %>" style="max-width: 200px;">
+            <% } %>
+            <p>Categoria: <%= post.categoria %></p>
+            <p><%= post.conteudo.substring(0, 100) %>...</p>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p>Nenhuma postagem encontrada para o termo pesquisado.</p>
+    <% } %>
+    
+</div>
+
+<%- include('./partials/footer') %>

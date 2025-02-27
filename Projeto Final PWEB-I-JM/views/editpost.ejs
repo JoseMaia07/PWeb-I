@@ -1,0 +1,29 @@
+<%- include('./partials/header') %>
+
+<div style="height: 100px; width: 100%;">
+    <img src="/images/componentes/Fundo-Skyrim-WH.jpg" class="rounded w-100 h-100 z-n1 position-absolute" alt="...">
+</div>
+  
+<div class="container mt-5 bg-dark text-light">
+  <h2>Editar Postagem</h2>
+  <form action="/posts/editar/<%= postagem.titulo %>" method="POST" enctype="multipart/form-data">
+    <h4>Título: <%= postagem.titulo %></h4>
+    <select class="form-select mt-3" name="categoria" required>
+      <option value="Magias" <%= postagem.categoria === 'Magias' ? 'selected' : '' %>>Magias</option>
+      <option value="Personagens" <%= postagem.categoria === 'Personagens' ? 'selected' : '' %>>Personagens</option>
+      <option value="Lugares" <%= postagem.categoria === 'Lugares' ? 'selected' : '' %>>Lugares</option>
+    </select>
+    <textarea class="form-control mt-3" name="conteudo" rows="5" required><%= postagem.conteudo %></textarea>
+    
+    <label class="form-label mt-3">Imagem de Capa Atual:</label>
+    <% if (postagem.capa) { %>
+      <img src="data:image/png;base64,<%= postagem.capa %>" class="img-fluid mb-3" alt="...">
+    <% } %>
+    <input type="hidden" name="existingCapa" value="<%= postagem.capa %>">
+    <input type="file" class="form-control" name="capa" accept="image/*">
+    
+    <button type="submit" class="btn btn-primary mt-3">Salvar Alterações</button>
+  </form>
+</div>
+
+<%- include('./partials/footer') %>

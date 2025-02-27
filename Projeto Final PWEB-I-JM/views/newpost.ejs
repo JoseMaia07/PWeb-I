@@ -1,0 +1,28 @@
+<%- include('./partials/header') %>
+
+<div style="height: 100px; width: 100%;">
+  <img src="/images/componentes/Fundo-Skyrim-WH.jpg" class="rounded w-100 h-100 z-n1 position-absolute" alt="...">
+</div>
+
+<div class="container mt-5 text-light">
+  <h2>Criar Nova Postagem</h2>
+  <form action="/posts/criar" method="POST" enctype="multipart/form-data">
+    <input type="text" class="form-control" name="titulo" placeholder="Título" required>
+    <select class="form-select mt-3" name="categoria" required>
+      <option value="Magias">Magias</option>
+      <option value="Personagens">Personagens</option>
+      <option value="Lugares">Lugares</option>
+    </select>
+
+    <textarea class="form-control mt-3" name="conteudo" rows="5" placeholder="Conteúdo" required></textarea>
+
+    <div class="mb-3">
+      <label class="form-label" for="inputImage">Imagem</label>
+      <input type="file" class="form-control" id="inputImage" name="capa" accept="image/*" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Criar Postagem</button>
+  </form>
+</div>
+
+<%- include('./partials/footer') %>
